@@ -4,6 +4,9 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 const AdminDashboardPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [orderData, setOrderData] = useState([]);
+  const [foodData, setFoodData] = useState([]);
+  const [foodReq, setFoodReq] = useState([]);
+  const [clientReview, setClientReview] = useState([]);
   const AxiosPublic = useAxiosPublic();
 
   const toggleSidebar = () => {
@@ -16,6 +19,42 @@ const AdminDashboardPage = () => {
       try {
         const res = await AxiosPublic.get(`/orders`);
         setOrderData(res.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, [AxiosPublic]);
+  // get Food Data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await AxiosPublic.get(`/api/foods`);
+        setFoodData(res.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, [AxiosPublic]);
+  // get Food Request Data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await AxiosPublic.get(`/api/food-reviews`);
+        setFoodReq(res.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, [AxiosPublic]);
+  // get ClientReviews Data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await AxiosPublic.get(`/client-reviews`);
+        setClientReview(res.data);
       } catch (error) {
         console.log(error.message);
       }
@@ -169,7 +208,8 @@ const AdminDashboardPage = () => {
                 style={{ animationDelay: "0.1s" }}
               >
                 <h3 className="text-xl font-bold text-indigo-800">
-                  Stats Card 1
+                  Total Food Requests:{" "}
+                  <span className="text-black font-bold">{foodReq.length}</span>
                 </h3>
               </div>
               <div
@@ -177,7 +217,8 @@ const AdminDashboardPage = () => {
                 style={{ animationDelay: "0.2s" }}
               >
                 <h3 className="text-xl font-bold text-indigo-800">
-                  Stats Card 2
+                  Number of foods in our current Database:{" "}
+                  <span className="font-extrabold">{foodData.length}</span>
                 </h3>
               </div>
               <div
@@ -185,7 +226,10 @@ const AdminDashboardPage = () => {
                 style={{ animationDelay: "0.3s" }}
               >
                 <h3 className="text-xl font-bold text-indigo-800">
-                  Stats Card 3
+                  Total reviews to UAP cafe given by clients are:{" "}
+                  <span className="font-bold text-black">
+                    {clientReview.length}
+                  </span>
                 </h3>
               </div>
             </div>
