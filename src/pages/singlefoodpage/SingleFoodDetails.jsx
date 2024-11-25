@@ -4,6 +4,7 @@ import useSingleFoodDetails from "../../hooks/useSingleFoodDetails";
 const SingleFoodDetails = () => {
   const [details, loading] = useSingleFoodDetails();
   const { name, category, image, _id, price, recipe } = details;
+  console.log(details);
   if (loading) return <p>Loading...</p>;
   if (!details) return <p>Food item not found.</p>;
 

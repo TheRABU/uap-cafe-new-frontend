@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -11,12 +10,10 @@ import "./styles.css";
 
 // import required modules
 import { Scrollbar } from "swiper/modules";
-import img1 from "../../../assets/home/01.jpg";
-import img2 from "../../../assets/home/02.jpg";
-import img3 from "../../../assets/home/03.png";
-import img4 from "../../../assets/home/04.jpg";
-import img5 from "../../../assets/home/05.png";
-import img6 from "../../../assets/home/06.png";
+import img1 from "../../../assets/home/1.jpeg";
+import img2 from "../../../assets/home/2.jpeg";
+import img3 from "../../../assets/home/3.jpeg";
+import img4 from "../../../assets/home/4.jpeg";
 const SwiperBanner = () => {
   return (
     <div className="h-[750px] ">
@@ -49,17 +46,6 @@ const SwiperBanner = () => {
         <SwiperSlide>
           <div>
             <img src={img4} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div>
-            <img src={img5} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <img src={img6} />
           </div>
         </SwiperSlide>
       </Swiper>
