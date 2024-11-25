@@ -14,7 +14,7 @@ const LeftDashboardBar = () => {
   const userOptions = [{ name: "My ordered food item", path: "/my-orders" }];
 
   const sellerOptions = [
-    { name: "My added food items", path: "/my-products" },
+    { name: "My added food items", path: "/my-requests" },
     { name: " Add a food item", path: "/request" },
     { name: "Orders", path: "/seller-orders" },
   ];

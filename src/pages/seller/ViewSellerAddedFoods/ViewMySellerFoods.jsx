@@ -1,26 +1,28 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../providers/AuthenticationProvider";
+import { AuthContext } from "../../../providers/AuthenticationProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
-import MyOrderCard from "./MyOrderCard";
+import SoldItemsCard from "./SoldItemsCard";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
-const MyOrders = () => {
+const ViewMySellerFoods = () => {
   const { user } = useContext(AuthContext);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+  const AxiosPublic = useAxiosPublic();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/myOrders/${user.email}`)
-      .then((response) => {
-        setLoading(false);
-        setOrders(response.data);
-      })
-      .catch((error) => {
-        console.log("Error occurred during fetching your request", error);
-      });
-  }, [user.email]);
+    const fetchData = async () => {
+      try {
+        const res = await AxiosPublic.get(`/api/food/${user?.email}`);
 
+        setOrders(res.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, [AxiosPublic, user?.email]);
   const handleDeleteOrder = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -34,7 +36,7 @@ const MyOrders = () => {
       .then((result) => {
         if (result.isConfirmed) {
           axios
-            .delete(`http://localhost:5000/order/${_id}`)
+            .delete(`http://localhost:5000/api/food/${_id}`)
             .then((response) => {
               if (response.status === 200) {
                 const remaining = orders.filter((ord) => ord._id !== _id);
@@ -66,21 +68,23 @@ const MyOrders = () => {
     );
   }
   return (
-    <div className="w-full px-5 h-full bg-[#ffffff]">
-      <h2 className="text-center text-3xl "> My Ordered food items</h2>
-      <section className="h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto px-3 lg:px-20">
-        {orders.map((order) => (
-          <MyOrderCard
-            key={order._id}
-            orders={order}
-            handleDeleteOrder={handleDeleteOrder}
-            setOrders={setOrders}
-            order={order}
-          />
-        ))}
-      </section>
-    </div>
+    <>
+      <div className="w-full px-5 h-full bg-[#ffffff]">
+        <h2 className="text-center text-3xl "> My Added Food Items</h2>
+        <section className="h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto px-3 lg:px-20">
+          {orders.map((order) => (
+            <SoldItemsCard
+              key={order._id}
+              orders={order}
+              handleDeleteOrder={handleDeleteOrder}
+              setOrders={setOrders}
+              order={order}
+            />
+          ))}
+        </section>
+      </div>
+    </>
   );
 };
 
-export default MyOrders;
+export default ViewMySellerFoods;
