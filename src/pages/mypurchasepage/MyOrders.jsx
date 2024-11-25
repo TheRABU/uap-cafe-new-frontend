@@ -9,10 +9,10 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const url = `http://localhost:5000/myOrders/${user.email}`;
   useEffect(() => {
+    console.log(user.email);
     axios
-      .get(url)
+      .get(`http://localhost:5000/myOrders/${user.email}`)
       .then((response) => {
         setLoading(false);
         setOrders(response.data);
@@ -20,24 +20,9 @@ const MyOrders = () => {
       .catch((error) => {
         console.log("Error occurred during fetching your request", error);
       });
-  }, [url]);
+  }, [user.email]);
 
   const handleDeleteOrder = (_id) => {
-    // const proceed = confirm("Are You sure you want to delete");
-    // if (proceed) {
-    //   fetch(`http://localhost:5000/order/${_id}`, {
-    //     method: "DELETE",
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       console.log(data);
-    //       if (data.deletedCount > 0) {
-    //         alert("deleted successfully");
-    //         const remaining = orders.filter((ord) => ord._id !== _id);
-    //         setOrders(remaining);
-    //       }
-    //     });
-    // }
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -86,26 +71,9 @@ const MyOrders = () => {
       <h2 className="text-center text-3xl "> My Ordered food items</h2>
       <section className="h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto px-3 lg:px-20">
         {orders.map((order) => (
-          // <div className="h-auto" key={order._id}>
-          //   <div className="card bg-base-100 shadow-xl">
-          //     <figure>
-          //       <img
-          //         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          //         alt="Shoes"
-          //       />
-          //     </figure>
-          //     <div className="card-body">
-          //       <h2 className="card-title">{order.FoodName}</h2>
-          //       <p>Quantity {order.orderQuantity}</p>
-          //       <div className="card-actions justify-end">
-          //         <button className="btn btn-error">Delete Order</button>
-          //       </div>
-          //     </div>
-          //   </div>
-          // </div>
           <MyOrderCard
             key={order._id}
-            orders={orders}
+            orders={order}
             handleDeleteOrder={handleDeleteOrder}
             setOrders={setOrders}
             order={order}

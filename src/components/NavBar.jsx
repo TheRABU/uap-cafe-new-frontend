@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthenticationProvider";
-import UserDropdown from "../components/UserDropdown";
+//import UserDropdown from "../components/UserDropdown";
 import SearchBar from "./SearchBar";
+import UserDropdown2 from "./UserDropdown2";
 
 const NavBar = () => {
   const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
+  console.log(user);
   const navLinks = [
     {
       path: "/",
@@ -105,7 +107,7 @@ const NavBar = () => {
           </div>
           <Link
             to="/"
-            className="btn btn-ghost text-xl text-yellow-400 font-bold"
+            className="btn btn-ghost text-2xl text-yellow-400 font-bold"
           >
             UapCafe
           </Link>
@@ -116,7 +118,7 @@ const NavBar = () => {
               // DESKTOP
               <Link
                 to={eachLink.path}
-                className="bg-slate-100 hover:bg-yellow-500 text-black text-lg font-semibold hover:text-white py-3 px-5 rounded-xl cursor-pointer"
+                className="text-white hover:text-yellow-400 text-xl px-4 "
                 key={eachLink.path}
               >
                 {eachLink.title}
@@ -129,7 +131,8 @@ const NavBar = () => {
           <div className="flex items-center mt-4 lg:mt-0">
             {/*  */}
             {user ? (
-              <UserDropdown />
+              // <UserDropdown />
+              <UserDropdown2 />
             ) : (
               <Link
                 to="/login"

@@ -2,8 +2,11 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthenticationProvider";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
+  const axiosPublic = useAxiosPublic();
   const [showPass, setShowPass] = useState(false);
 
   // const location = useLocation();
@@ -32,12 +35,14 @@ const LoginPage = () => {
   const googleLogin = () => {
     signInWithGoogle()
       .then((result) => {
-        const user = result.user;
-        // if (location && location.state && location.state.from) {
-        //   navigate(location.state.from.pathname);
-        // } else {
-        //   navigate("/");
-        // }
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+          role: "user",
+        };
+        axiosPublic.post("/users", userInfo);
+
+        toast.success("Login successful");
         navigate("/");
       })
       .catch((error) => {

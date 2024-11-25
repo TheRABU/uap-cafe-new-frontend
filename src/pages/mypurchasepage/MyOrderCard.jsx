@@ -1,27 +1,23 @@
 import axios from "axios";
 
-const MyOrderCard = ({ order, handleDeleteOrder }) => {
+const MyOrderCard = ({ orders, handleDeleteOrder }) => {
   const {
     _id,
     FoodName,
     FoodImage,
     orderQuantity,
     Price,
-    time,
     name,
     email,
     date,
-    area,
-    state,
-    city,
-    postCode,
-  } = order;
+    status,
+  } = orders;
 
   return (
     <div className="h-auto">
       <div className="card bg-base-100 shadow-xl">
         <figure>
-          {order.FoodImage ? (
+          {FoodImage ? (
             <img src={FoodImage} alt="Shoes" />
           ) : (
             <img
@@ -38,31 +34,22 @@ const MyOrderCard = ({ order, handleDeleteOrder }) => {
           <div className="text-center">
             <div className="text-left">
               <ul>
-                <li>Name {name}</li>
+                <li>Name: {name}</li>
               </ul>
               <ul>
-                <li>Email {email}</li>
+                <li>Email: {email}</li>
               </ul>
 
               <ul>
-                <li>Order Placed in {date}</li>
-              </ul>
-              <ul>
-                <li>Time {time}</li>
+                <li>Order Placed in: {date}</li>
               </ul>
             </div>
             <div className="block text-left">
               <ul>
-                <li>Area {area}</li>
+                <li>Price: {Price}</li>
               </ul>
               <ul>
-                <li>State {state}</li>
-              </ul>
-              <ul>
-                <li>City {city}</li>
-              </ul>
-              <ul>
-                <li>Post Code {postCode}</li>
+                <li>Status: {status}</li>
               </ul>
             </div>
           </div>

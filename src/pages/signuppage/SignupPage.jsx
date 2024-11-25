@@ -5,7 +5,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../providers/AuthenticationProvider";
 import { useContext, useState } from "react";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 const SignupPage = () => {
+  const axiosPublic = useAxiosPublic();
   const [showPass, setShowPass] = useState(false);
   const [matchedPassword, setMatchedPassword] = useState(false);
   const location = useLocation();
@@ -74,6 +76,16 @@ const SignupPage = () => {
     }
     createUser(email, password)
       .then(() => {
+        const userInfo = {
+          name: name,
+          email: email,
+          role: "user",
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          if (res.data.insertedId) {
+            toast.success("User created successfully");
+          }
+        });
         Swal.fire({
           position: "top-center",
           icon: "success",

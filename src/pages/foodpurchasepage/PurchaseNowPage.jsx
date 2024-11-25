@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   Link,
   useLoaderData,
@@ -13,92 +13,49 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 const PurchaseNowPage = () => {
   const foodDetail = useLoaderData();
   const axiosPublic = useAxiosPublic();
-  const { image, name, category, price, _id, Quantity } = foodDetail;
+  const { image, name, price, Quantity } = foodDetail;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [counter, setCounter] = useState(1);
+  const [action, setAction] = useState(null);
 
   // increment decrement button handlers
-  const incrementCount = () => {
-    if (counter < Quantity) {
-      setCounter(counter + 1);
+  useEffect(() => {
+    if (action === "increment" && counter < Quantity) {
+      setCounter((prevCounter) => prevCounter + 1);
+    } else if (action === "decrement" && counter > 1) {
+      setCounter((prevCounter) => prevCounter - 1);
     }
-  };
-  const decrementCount = () => {
-    if (counter > 1) {
-      setCounter(counter - 1);
-    }
-  };
-  // handle order function
+    // Reset action to prevent repeated updates
+    setAction(null);
+  }, [action, counter, Quantity]);
 
-  const handleOrder = async (e) => {
+  const totalPrice = price * counter;
+
+  const handelCreatePayment = async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = user.displayName;
     const email = user.email;
     const date = form.date.value;
-    const area = form.area.value;
-    const state = form.state.value;
-    const city = form.city.value;
-    const postCode = form.postCode.value;
 
-    const orderValue = {
-      name,
-      email,
-      date,
-      area,
-      state,
-      city,
-      postCode,
-      FoodName: foodDetail.name,
-      FoodImage: foodDetail.image,
-      Price: foodDetail.price,
-      orderQuantity: counter,
-    };
-
-    try {
-      const res = await axiosPublic.post(`/order`, orderValue);
-      if (res.data.insertedId) {
-        Swal.fire({
-          position: "top-center",
-          icon: "success",
-          title: "Order Confirmed",
-          showConfirmButton: false,
-          timer: 1500,
-        }).then(() => {
-          navigate("/");
-        });
-      }
-    } catch (error) {
-      Swal.fire({
-        position: "top-center",
-        icon: "error",
-        title: `${error.message}`,
-        showConfirmButton: false,
-        timer: 1500,
+    axiosPublic
+      .post("/create-payment", {
+        amount: totalPrice,
+        name: name,
+        email: email,
+        date: date,
+        productName: foodDetail.name,
+        productImage: foodDetail.image,
+        orderQuantity: counter,
+      })
+      .then((response) => {
+        console.log(response);
+        const redirectUrl = response.data.paymentUrl;
+        if (redirectUrl) {
+          window.location.replace(redirectUrl);
+        }
       });
-    }
-
-    // axios
-    //   .post("http://localhost:5000/order", orderValue)
-    //   .then((response) => {
-    //     if (response.data.insertedId) {
-    //       Swal.fire({
-    //         position: "top-center",
-    //         icon: "success",
-    //         title: "Order Confirmed",
-    //         showConfirmButton: false,
-    //         timer: 1500,
-    //       }).then(() => {
-    //         navigate("/");
-    //       });
-    //     }
-
-    //     navigate(location?.pathname ? location.pathname : "/");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.message);
-    //   });
   };
 
   return (
@@ -114,7 +71,7 @@ const PurchaseNowPage = () => {
             <div className="flex flex-col justify-between p-6 space-y-8">
               <div className="space-y-2">
                 <h2 className="text-3xl font-semibold tracking-wide">{name}</h2>
-                <p className="text-gray-100">BDT {price}</p>
+                <p className="text-gray-100">BDT {totalPrice}</p>
                 <p className="text-gray-100">Left {Quantity}</p>
 
                 <div
@@ -123,7 +80,7 @@ const PurchaseNowPage = () => {
                 >
                   <div className="flex items-center gap-x-1.5">
                     <button
-                      onClick={decrementCount}
+                      onClick={() => setAction("decrement")}
                       type="button"
                       className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
                       data-hs-input-number-decrement=""
@@ -153,7 +110,7 @@ const PurchaseNowPage = () => {
                       data-hs-input-number-input=""
                     />
                     <button
-                      onClick={incrementCount}
+                      onClick={() => setAction("increment")}
                       type="button"
                       className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
                       data-hs-input-number-increment=""
@@ -187,8 +144,8 @@ const PurchaseNowPage = () => {
           </div>
         </div>
         {/* FORM */}
-        <div className="mx-auto w-full max-w-[550px] bg-white">
-          <form onSubmit={handleOrder}>
+        <div className="mx-auto w-full max-w-[550px] p-5 rounded-xl bg-white">
+          <form onSubmit={handelCreatePayment}>
             <div className="mb-5">
               <label
                 htmlFor="name"
@@ -256,62 +213,6 @@ const PurchaseNowPage = () => {
                     required={true}
                     className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                   />
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-5 pt-3">
-              <label className="mb-5 block text-base font-semibold text-[#07074D] sm:text-xl">
-                Address Details
-              </label>
-              <div className="-mx-3 flex flex-wrap">
-                <div className="w-full px-3 sm:w-1/2">
-                  <div className="mb-5">
-                    <input
-                      type="text"
-                      name="area"
-                      id="area"
-                      placeholder="Enter area"
-                      required={true}
-                      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                    />
-                  </div>
-                </div>
-                <div className="w-full px-3 sm:w-1/2">
-                  <div className="mb-5">
-                    <input
-                      type="text"
-                      name="city"
-                      id="city"
-                      placeholder="Enter city"
-                      required={true}
-                      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                    />
-                  </div>
-                </div>
-                <div className="w-full px-3 sm:w-1/2">
-                  <div className="mb-5">
-                    <input
-                      type="text"
-                      name="state"
-                      id="state"
-                      placeholder="Enter state"
-                      required={true}
-                      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                    />
-                  </div>
-                </div>
-                <div className="w-full px-3 sm:w-1/2">
-                  <div className="mb-5">
-                    <input
-                      type="text"
-                      name="postCode"
-                      id="post-code"
-                      placeholder="Post Code"
-                      required={true}
-                      className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
