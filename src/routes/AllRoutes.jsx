@@ -19,10 +19,14 @@ import MyAddedItems from "../pages/myaddedfooditemspage/MyAddedItems";
 import MyOrders from "../pages/mypurchasepage/MyOrders";
 import AddReviewGallery from "../pages/addreviewtogallery/AddReviewGallery";
 import MyFoodItemReviews from "../pages/myfoodreviewspage/MyFoodItemReviews";
+
 import Success from "../pages/PaymentStatus/Success";
 import Fail from "../pages/PaymentStatus/Fail";
 import Cancel from "../pages/PaymentStatus/Cancel";
 import ManageUsers from "../pages/manageUsers/ManageUsers";
+import AdminDashboardLayout from "../outlets/AdminDashboardLayout";
+import AdminDashboardPage from "../pages/admin/AdminDashboard/AdminDashboardPage";
+
 
 const router = createBrowserRouter([
   {
@@ -125,6 +129,16 @@ const router = createBrowserRouter([
       {
         path: "/myFoodReviews",
         element: <MyFoodItemReviews />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <AdminDashboardLayout />,
+    children: [
+      {
+        path: "/admin-dash",
+        element: <AdminDashboardPage />,
       },
     ],
   },
