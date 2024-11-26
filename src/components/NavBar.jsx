@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthenticationProvider";
-//import UserDropdown from "../components/UserDropdown";
+import UserDropdown from "../components/UserDropdown";
 import SearchBar from "./SearchBar";
 import UserDropdown2 from "./UserDropdown2";
 
@@ -131,9 +131,9 @@ const NavBar = () => {
           <div className="flex items-center mt-4 lg:mt-0">
             {/*  */}
             {user ? (
-              // <UserDropdown />
-              <UserDropdown2 />
+              <UserDropdown />
             ) : (
+              // <UserDropdown2 />
               <Link
                 to="/login"
                 className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md"

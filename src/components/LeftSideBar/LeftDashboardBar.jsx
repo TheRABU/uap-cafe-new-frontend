@@ -9,30 +9,30 @@ const LeftDashboardBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const commonOptions = [{ name: "Dashboard", path: "/dashboard" }];
+  // const commonOptions = [{ name: "Dashboard", path: "/dashboard" }];
 
-  const userOptions = [{ name: "My ordered food item", path: "/my-orders" }];
+  // const userOptions = [{ name: "My ordered food item", path: "/my-orders" }];
 
-  const sellerOptions = [
-    { name: "My added food items", path: "/my-requests" },
-    { name: " Add a food item", path: "/request" },
-    { name: "Orders", path: "/seller-orders" },
-  ];
+  // const sellerOptions = [
+  //   { name: "My added food items", path: "/my-requests" },
+  //   { name: " Add a food item", path: "/request" },
+  //   { name: "Orders", path: "/seller-orders" },
+  // ];
 
-  const adminOptions = [{ name: "Manage Users", path: "/manage-users" }];
+  // const adminOptions = [{ name: "Manage Users", path: "/manage-users" }];
 
   // Determine the options based on the role
-  let roleSpecificOptions = [];
-  if (users.role === "user") {
-    roleSpecificOptions = userOptions;
-  } else if (users.role === "seller") {
-    roleSpecificOptions = sellerOptions;
-  } else if (users.role === "admin") {
-    roleSpecificOptions = adminOptions;
-  }
+  // let roleSpecificOptions = [];
+  // if (users.role === "user") {
+  //   roleSpecificOptions = userOptions;
+  // } else if (users.role === "seller") {
+  //   roleSpecificOptions = sellerOptions;
+  // } else if (users.role === "admin") {
+  //   roleSpecificOptions = adminOptions;
+  // }
 
   // Combine common options with role-specific options
-  const menuOptions = [...commonOptions, ...roleSpecificOptions];
+  // const menuOptions = [...commonOptions, ...roleSpecificOptions];
   // handleLogout
   const handleLogOut = () => {
     logOut()
@@ -56,7 +56,7 @@ const LeftDashboardBar = () => {
         </div>
         <div className="divide-y divide-gray-700">
           <ul className="pt-2 pb-4 space-y-1 text-sm">
-            {menuOptions.map((option, index) => (
+            {/* {menuOptions.map((option, index) => (
               <li key={index} className="bg-gray-800 text-gray-50">
                 <Link
                   rel="noopener noreferrer"
@@ -73,9 +73,9 @@ const LeftDashboardBar = () => {
                   <span>{option.name}</span>
                 </Link>
               </li>
-            ))}
+            ))} */}
 
-            {/* <li className="bg-gray-800 text-gray-50">
+            <li className="bg-gray-800 text-gray-50">
               <Link
                 rel="noopener noreferrer"
                 to="/dashboard"
@@ -90,12 +90,12 @@ const LeftDashboardBar = () => {
                 </svg>
                 <span>Dashboard</span>
               </Link>
-            </li> */}
+            </li>
 
-            {/* <li>
-              <a
+            <li>
+              <Link
+                to="/myFoodReviews"
                 rel="noopener noreferrer"
-                href="#"
                 className="flex items-center p-2 space-x-3 rounded-md"
               >
                 <svg
@@ -107,9 +107,9 @@ const LeftDashboardBar = () => {
                   <path d="M60.185,317.476a220.491,220.491,0,0,0,34.808-63.023l4.22-11.975-9.207-7.066C62.918,214.626,48,186.728,48,156.857,48,96.833,109.009,48,184,48c55.168,0,102.767,26.43,124.077,64.3,3.957-.192,7.931-.3,11.923-.3q12.027,0,23.834,1.167c-8.235-21.335-22.537-40.811-42.2-56.961C270.072,30.279,228.3,16,184,16S97.928,30.279,66.364,56.206C33.886,82.885,16,118.63,16,156.857c0,35.8,16.352,70.295,45.25,96.243a188.4,188.4,0,0,1-40.563,60.729L16,318.515V352H32a190.643,190.643,0,0,0,85.231-20.125,157.3,157.3,0,0,1-5.071-33.645A158.729,158.729,0,0,1,60.185,317.476Z"></path>
                 </svg>
                 <span>My added reviews</span>
-              </a>
-            </li> */}
-            {/* <li>
+              </Link>
+            </li>
+            <li>
               <Link
                 rel="noopener noreferrer"
                 to="/my-orders"
@@ -127,10 +127,10 @@ const LeftDashboardBar = () => {
                 <span>My ordered items</span>
               </Link>
             </li>
-            <li className="flex justify-center items-center mr-28">
+            {/* <li className="flex justify-center items-center mr-28">
               <FaRegStar />
               <Link to="myFoodReviews">My Food Reviews</Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 rel="noopener noreferrer"
@@ -164,8 +164,8 @@ const LeftDashboardBar = () => {
               </Link>
             </li>
           </ul>
-          <ul className="pt-4 pb-2 space-y-1 text-sm"> */}
-            {/* <li>
+          {/* <ul className="pt-4 pb-2 space-y-1 text-sm">
+            <li>
               <a
                 rel="noopener noreferrer"
                 href="#"
@@ -181,7 +181,7 @@ const LeftDashboardBar = () => {
                 </svg>
                 <span>Settings</span>
               </a>
-            </li> */}
+            </li>
             <li>
               <button
                 onClick={handleLogOut}
@@ -198,7 +198,7 @@ const LeftDashboardBar = () => {
                 Log Out
               </button>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </>

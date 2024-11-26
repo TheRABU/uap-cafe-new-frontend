@@ -1,198 +1,221 @@
 [
   {
-    "_id": "1",
     "name": "Paratha/Routi",
     "recipe": "Soft, flaky flatbread made from whole wheat flour, served warm.",
     "image": "https://img.freepik.com/premium-photo/indian-aloo-paratha-bread-with-potato_762785-240465.jpg?semt=ais_hybrid",
     "category": "Main Dish",
-    "price": 10
+    "price": 10,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "2",
     "name": "Only Dal",
     "recipe": "A simple and hearty lentil soup seasoned with turmeric and spices.",
     "image": "https://img.freepik.com/free-photo/traditional-indian-soup-lentils-indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-table_2829-18717.jpg?t=st=1730225655~exp=1730229255~hmac=7c5b355efbc2d74cf60272e8d60ce0e4636377a3302da433cf39d61f553722f4&w=740",
     "category": "Main Dish",
-    "price": 20
+    "price": 20,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "3",
     "name": "Only Mixed Vegetable",
     "recipe": "Stir-fried seasonal vegetables with light spices.",
     "image": "https://img.freepik.com/premium-photo/directly-shot-vegetable-salad_1048944-24603143.jpg?w=740",
     "category": "Main Dish",
-    "price": 20
+    "price": 20,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "4",
     "name": "Egg Omelette",
     "recipe": "Fluffy omelette with onions, tomatoes, and green chilies.",
     "image": "https://img.freepik.com/premium-photo/highresolution-realistic-breakfast-omelette-isolated-transparent-background_167857-25019.jpg?w=826",
     "category": "Main Dish",
-    "price": 20
+    "price": 20,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "5",
     "name": "Only Shuji Haloua",
     "recipe": "Traditional semolina dessert cooked with sugar and ghee.",
     "image": "https://img.freepik.com/premium-photo/cake-with-nuts-it-sits-plate_975681-2224.jpg?w=740",
     "category": "Main Dish",
-    "price": 20
+    "price": 20,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "6",
     "name": "Plain Khichuri + Egg",
     "recipe": "Rice and lentil porridge with spices, served with a boiled egg.",
     "image": "https://img.freepik.com/premium-vector/bihari-litti-chokha-traditional-dish_1253557-55704.jpg?w=740",
     "category": "Main Dish",
-    "price": 55
+    "price": 55,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "7",
     "name": "Egg Curry",
     "recipe": "Boiled eggs in a rich, spicy tomato gravy.",
     "image": "https://img.freepik.com/premium-photo/anda-masala-egg-curry-is-popular-indian-spicy-food_960396-761905.jpg?w=740",
     "category": "Main Dish",
-    "price": 30
+    "price": 30,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "8",
     "name": "Chicken Curry",
     "recipe": "Tender chicken pieces cooked in a flavorful curry sauce.",
     "image": "https://img.freepik.com/free-photo/massaman-curry-frying-pan-with-spices-cement-floor_1150-20779.jpg?t=st=1730226436~exp=1730230036~hmac=6cad9e0d770c7050d325aa30152cf1579abdcda49c124ac61e1c3c5bcd27007b&w=740",
     "category": "Main Dish",
-    "price": 60
+    "price": 60,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "9",
     "name": "Fried Rice/Polau",
     "recipe": "Aromatic rice dish with vegetables and spices.",
     "image": "https://img.freepik.com/premium-photo/plate-rice-with-slice-cucumber-corn_1293546-8496.jpg?w=740",
     "category": "Main Dish",
-    "price": 40
+    "price": 40,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "10",
     "name": "Chinese Vegetable",
     "recipe": "Stir-fried vegetables in a light soy-based sauce.",
     "image": "https://img.freepik.com/premium-photo/bowl-stir-fry-with-broccoli-mushrooms_198067-748625.jpg?w=740",
     "category": "Main Dish",
-    "price": 30
+    "price": 30,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "11",
     "name": "Beef Curry",
     "recipe": "Beef cooked with spices in a rich curry sauce.",
     "image": "https://img.freepik.com/premium-photo/yummy-lamb-rogan-josh-isolated-blur-background_787273-23445.jpg?w=740",
     "category": "Main Dish",
-    "price": 60
+    "price": 60,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "12",
     "name": "Alu Corolla Vaji",
     "recipe": "Stir-fried potatoes with bitter melon, seasoned with spices.",
     "image": "https://img.freepik.com/premium-photo/plate-potatoes-potatoes-ketchup-are-table_981385-4556.jpg?w=740",
     "category": "Main Dish",
-    "price": 20
+    "price": 20,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "13",
     "name": "Dim Vorta / Begun Vorta / Fish Vorta",
     "recipe": "Mashed eggplant, boiled egg, or fish, mixed with spices.",
     "image": "https://thumbs.dreamstime.com/z/indian-street-food-meal-india-alo-bharta-shim-baingan-tomato-banana-bharta-dry-fish-bharta-indian-bharata-recipe-indian-street-243134088.jpg?ct=jpeg",
     "category": "Main Dish",
-    "price": 20
+    "price": 20,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "14",
     "name": "Plain Rice",
     "recipe": "Steamed white rice, served hot.",
     "image": "https://img.freepik.com/premium-photo/bowl-rice-with-sprig-parsley-top_862994-626317.jpg?w=740",
     "category": "Main Dish",
-    "price": 15
+    "price": 15,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "15",
     "name": "Chicken Roast (Cock)",
     "recipe": "Whole chicken marinated and roasted with spices.",
     "image": "https://img.freepik.com/premium-photo/grilled-chicken-legs-with-spices-garlic_82893-5468.jpg?w=740",
     "category": "Main Dish",
-    "price": 120
+    "price": 120,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "16",
     "name": "Vegetable Roll",
     "recipe": "Deep-fried roll filled with spiced vegetables.",
     "image": "https://img.freepik.com/free-photo/fresh-gourmet-meal-grilled-beef-taco-with-homemade-avocado-sauce-generated-by-ai_188544-55884.jpg?t=st=1730227182~exp=1730230782~hmac=f5ff178356e10ce62a42d3a3906b4360f7c0fe9f85dee312bcac8e1c6c8cd6bb&w=826",
     "category": "Snack",
-    "price": 30
+    "price": 30,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 15
   },
   {
-    "_id": "17",
     "name": "Chicken Roll",
     "recipe": "Roll filled with spiced shredded chicken and vegetables.",
     "image": "https://img.freepik.com/premium-photo/fried-spring-rolls-cutting-board_1013720-1078.jpg?w=740",
     "category": "Snack",
-    "price": 50
+    "price": 50,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 50
   },
   {
-    "_id": "18",
     "name": "Chola Vuna + Muri",
     "recipe": "Spiced chickpeas served with puffed rice.",
     "image": "https://img.freepik.com/premium-photo/spicy-roasted-chickpeas-snack_944420-61276.jpg?w=740",
     "category": "Snack",
-    "price": 40
+    "price": 40,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 30
   },
   {
-    "_id": "19",
     "name": "Vegetable Pasta",
     "recipe": "Pasta tossed with fresh vegetables and light seasoning.",
     "image": "https://img.freepik.com/free-photo/pasta-with-tomato-sauce-with-sausage-tomatoes-green-basil-decorated-white-plate-wooden-table_2829-8030.jpg?t=st=1730227386~exp=1730230986~hmac=ff8a5d4a5491a570334fff8747de806ff4bee886825fed696d2a67c37a05926a&w=740",
     "category": "Snack",
-    "price": 40
+    "price": 40,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 10
   },
   {
-    "_id": "20",
     "name": "Mackroni",
     "recipe": "Creamy macaroni with spices.",
     "image": "https://img.freepik.com/free-photo/raw-spiral-macaroni-spaghetti-wooden-plate_114579-40359.jpg?t=st=1730227422~exp=1730231022~hmac=bd465db31806dcc37cca2ffb6959298efaf9353c46577c8f5d53ba769cac58ba&w=740",
     "category": "Snack",
-    "price": 50
+    "price": 50,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 12
   },
   {
-    "_id": "21",
     "name": "Chicken Shorma",
     "recipe": "Seasoned chicken wrapped in flatbread with veggies and sauce.",
     "image": "https://img.freepik.com/premium-photo/close-up-taco-that-has-been-eaten_1058338-10556.jpg?w=740",
     "category": "Snack",
-    "price": 80
+    "price": 80,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 30
   },
   {
-    "_id": "22",
     "name": "Chicken Porota",
     "recipe": "Chicken filling wrapped in flaky paratha bread.",
     "image": "https://img.freepik.com/premium-photo/picture-aloo-paratha_636537-377377.jpg?w=740",
     "category": "Snack",
-    "price": 80
+    "price": 80,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 50
   },
   {
-    "_id": "23",
     "name": "Pizza",
     "recipe": "Mini pizza topped with cheese and vegetables.",
     "image": "https://img.freepik.com/free-photo/top-view-pepperoni-pizza-with-mushroom-sausages-bell-pepper-olive-corn-black-wooden_141793-2158.jpg?t=st=1730227587~exp=1730231187~hmac=759ed34a1c32f33d44af8ec84b079a5a41130169aeca481e1c128e468917fa28&w=740",
     "category": "Snack",
-    "price": 40
+    "price": 40,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 30
   },
   {
-    "_id": "24",
     "name": "Sandwich (Chicken + Vegetable)",
     "recipe": "Sandwich filled with seasoned chicken and vegetables.",
     "image": "https://img.freepik.com/free-photo/club-sandwich-with-french-fries-wooden-board_140725-1323.jpg?t=st=1730227619~exp=1730231219~hmac=035c2135a02ba03a7ef10f84737b617a2335d1ee4d7d0c08cfedbe8be1a4d643&w=740",
     "category": "Snack",
-    "price": 40
+    "price": 40,
+    "email": "fazlerabbi.xd@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "25",
     "name": "Mini Chicken Burger",
     "recipe": "Mini burger with chicken patty, lettuce, and sauce.",
     "image": "https://img.freepik.com/free-photo/sandwich-with-chicken-burger-tomatoes-cheese-lettuce_2829-16293.jpg?t=st=1730227747~exp=1730231347~hmac=d4af9669db798afc6f7be72f1c597291e957a736cc34d15fd00c37c58ec3b10a&w=740",
@@ -200,76 +223,85 @@
     "price": 50
   },
   {
-    "_id": "26",
     "name": "Lemonade",
     "recipe": "Refreshing drink made from fresh lemon juice and sugar.",
     "image": "https://img.freepik.com/free-photo/lemonade-with-lemon-mint-ice-cubes_176532-10727.jpg?t=st=1730227672~exp=1730231272~hmac=f5fa1bacd3c15a5329e1b4fb43d8cf94c4adb3e69e182f51355dd3b113ace7f3&w=360",
     "category": "Juice",
-    "price": 20
+    "price": 20,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 100
   },
   {
-    "_id": "27",
     "name": "Green Mango Juice",
     "recipe": "Tart green mango juice with a hint of sweetness.",
     "image": "https://img.freepik.com/premium-photo/glass-green-juice-with-mangoes-mango-it_1304175-75538.jpg?w=360",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 15
   },
   {
-    "_id": "28",
     "name": "Ripe Mango Juice",
     "recipe": "Sweet and refreshing ripe mango juice.",
     "image": "https://img.freepik.com/premium-photo/fresh-mango-juice-fruit_998780-11549.jpg?w=826",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 30
   },
   {
-    "_id": "29",
     "name": "Papaya Juice",
     "recipe": "Freshly blended papaya juice.",
     "image": "https://img.freepik.com/free-photo/fresh-papaya-juice-glass-with-papaya-fruit-wooden-table-black-background-ai-generative_123827-24227.jpg?t=st=1730227900~exp=1730231500~hmac=a2d5c8b2474826b7399a18a00d74478b5d952dc2e7f5eb689065ce47d2818b98&w=740",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 28
   },
   {
-    "_id": "30",
     "name": "Pineapple Juice",
     "recipe": "Tropical pineapple juice with a sweet and tangy flavor.",
     "image": "https://img.freepik.com/premium-photo/fresh-pineapple-fruit-juice_1177032-6030.jpg?w=740",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 12
   },
   {
-    "_id": "31",
     "name": "Water Melon Juice",
     "recipe": "Refreshing watermelon juice, perfect for summer.",
     "image": "https://img.freepik.com/premium-photo/watermelon-juice-splash-isolated-white-background_1204722-2647.jpg?w=740",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 35
   },
   {
-    "_id": "32",
     "name": "Orange Juice",
     "recipe": "Freshly squeezed orange juice.",
     "image": "https://img.freepik.com/premium-vector/refreshing-vector-glass-orange-juice-flat-style-graphic-design-projects_1120563-9796.jpg?w=826",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 30
   },
   {
-    "_id": "33",
     "name": "Black Berry Juice",
     "recipe": "Rich and tangy blackberry juice.",
     "image": "https://img.freepik.com/premium-photo/wooden-cocktail-blueberry-milk-smoothies_1234738-543721.jpg?w=826",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 8
   },
   {
-    "_id": "34",
     "name": "Olive Juice",
     "recipe": "Savory and unique olive juice.",
     "image": "https://img.freepik.com/free-photo/green-olives-olive-oil-glass-jar-with-olive-leaves-side-view-white-wood-plank_176474-5315.jpg?t=st=1730228077~exp=1730231677~hmac=dac3898d3c2fa214ab21f0ac1df66875477b8e21d7248af124db5b9056ebdbf6&w=740",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 20
   },
   {
     "_id": "35",
@@ -277,7 +309,9 @@
     "recipe": "Exotic dragon fruit juice with a mild sweetness.",
     "image": "https://img.freepik.com/free-photo/dragon-fruit-with-juice-tray-wooden-table-plaster-wall-high-angle-view_176474-9420.jpg?t=st=1730228108~exp=1730231708~hmac=08a52f16ffbcf2ab576ec6de23c8b43e8e638f69bcb796564043f038bb2bf74f&w=740",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 10
   },
   {
     "_id": "36",
@@ -285,54 +319,62 @@
     "recipe": "Sweet and refreshing strawberry juice.",
     "image": "https://img.freepik.com/premium-photo/strawberry-juice-natural-goodness_1234738-556161.jpg?w=826",
     "category": "Juice",
-    "price": 40
+    "price": 40,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 17
   },
   {
-    "_id": "37",
     "name": "Sweet Lacchi",
     "recipe": "Yogurt-based sweet drink, flavored with rose water.",
     "image": "https://img.freepik.com/free-photo/jug-rice-milk-with-rice-plant-rice-seed-put-wooden-floor_1150-34546.jpg?t=st=1730228215~exp=1730231815~hmac=2b80a16687da59ff3464f6b13f2b424b57df983b4afc90a48dfd427c8724889d&w=360",
     "category": "Juice",
-    "price": 50
+    "price": 50,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 27
   },
   {
-    "_id": "38",
     "name": "Cold Coffee",
     "recipe": "Chilled coffee with a hint of sweetness and milk.",
     "image": "https://img.freepik.com/free-photo/cold-coffee_144627-22100.jpg?t=st=1730228238~exp=1730231838~hmac=51ccc47dc43bd49cfd1ea7d2ba248659808e6ba9ba8fcb99d55735d38c33693d&w=360",
     "category": "Juice",
-    "price": 50
+    "price": 50,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 15
   },
   {
-    "_id": "39",
     "name": "Milkshake",
     "recipe": "Creamy milkshake with your choice of flavor.",
     "image": "https://img.freepik.com/free-photo/front-view-delicious-milkshake-wooden-table_23-2148296076.jpg?t=st=1730228264~exp=1730231864~hmac=27fb77e132c0401046ef8e3a8c1bfb097e395ee2272d9ccf195094449b0d7ac4&w=360",
     "category": "Juice",
-    "price": 50
+    "price": 50,
+    "email": "21101019@uap-bd.edu",
+    "quantity": 20
   },
   {
-    "_id": "40",
     "name": "Fuska (Normal)",
     "recipe": "Crispy puris filled with tangy tamarind water and spices.",
     "image": "https://i.ytimg.com/vi/U6Uc_9g4z80/hqdefault.jpg",
     "category": "Fuska & Chotpoti",
-    "price": 50
+    "price": 50,
+    "email": "jacobjanvi@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "41",
     "name": "Doi Fuska",
     "recipe": "Fuska topped with yogurt, tamarind sauce, and spices.",
     "image": "https://i.ytimg.com/vi/pXcr6m-EFfY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBm7r336mygQetKvCnH7UBHIA9-BA",
     "category": "Fuska & Chotpoti",
-    "price": 100
+    "price": 100,
+    "email": "jacobjanvi@gmail.com",
+    "quantity": 20
   },
   {
-    "_id": "42",
     "name": "Chotpoti",
     "recipe": "Spicy and tangy chickpea and potato chaat.",
     "image": "https://img.freepik.com/premium-photo/spicy-naga-chotpoti-include-chickpea-tomato-onion-cabbage-chilli-coriander-sauce-served-plate-isolated-wooden-table-side-view-bangladeshi-street-food_689047-7714.jpg?w=740",
     "category": "Fuska & Chotpoti",
-    "price": 50
+    "price": 50,
+    "email": "jacobjanvi@gmail.com",
+    "quantity": 20
   }
 ]

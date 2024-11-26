@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import UserDropdown from "../../../components/UserDropdown";
+import { Link } from "react-router-dom";
 
 const AdminDashboardPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -7,11 +9,30 @@ const AdminDashboardPage = () => {
   const [foodData, setFoodData] = useState([]);
   const [foodReq, setFoodReq] = useState([]);
   const [clientReview, setClientReview] = useState([]);
+  const [currentTime, setCurrentTime] = useState("");
   const AxiosPublic = useAxiosPublic();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  // FOR CURRENT TIME
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const formattedTime = now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      });
+      setCurrentTime(formattedTime);
+    };
+
+    // Set interval to update time every second
+    const timer = setInterval(updateTime, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   // get Order Data
   useEffect(() => {
@@ -89,11 +110,12 @@ const AdminDashboardPage = () => {
               <span className="material-icons-outlined p-2 text-2xl cursor-pointer hover:text-indigo-800 transition-transform duration-300 hover:scale-110 hidden md:block">
                 notifications
               </span> */}
-              <img
+              {/* <img
                 className="w-10 h-10 rounded-full transition-transform duration-300 hover:scale-110 object-cover"
                 src="https://i.pinimg.com/564x/de/0f/3d/de0f3d06d2c6dbf29a888cf78e4c0323.jpg"
                 alt="Profile"
-              />
+              /> */}
+              <UserDropdown />
             </div>
           </div>
         </header>
@@ -107,39 +129,21 @@ const AdminDashboardPage = () => {
             } lg:translate-x-0 transition-transform duration-300 z-45 overflow-y-auto p-4`}
           >
             <div className="bg-white rounded-xl shadow-lg mb-6 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <a
-                href="#"
+              <Link
+                to="/manage-users"
                 className="flex items-center text-gray-600 hover:text-indigo-800 py-4 transition-all duration-300 hover:translate-x-1"
               >
-                <span className="material-icons-outlined mr-2">dashboard</span>
-                Home
-                <span className="material-icons-outlined ml-auto">
-                  keyboard_arrow_right
-                </span>
-              </a>
-              <a
-                href="#"
+                <span className="material-icons-outlined">Manage users</span>
+              </Link>
+              <Link
+                to="/"
                 className="flex items-center text-gray-600 hover:text-indigo-800 py-4 transition-all duration-300 hover:translate-x-1"
               >
-                <span className="material-icons-outlined mr-2">tune</span>
-                Some menu item
-                <span className="material-icons-outlined ml-auto">
-                  keyboard_arrow_right
-                </span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center text-gray-600 hover:text-indigo-800 py-4 transition-all duration-300 hover:translate-x-1"
-              >
-                <span className="material-icons-outlined mr-2">file_copy</span>
-                Another menu item
-                <span className="material-icons-outlined ml-auto">
-                  keyboard_arrow_right
-                </span>
-              </a>
+                <span className="material-icons-outlined">Home</span>
+              </Link>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            {/* <div className="bg-white rounded-xl shadow-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <a
                 href="#"
                 className="flex items-center text-gray-600 hover:text-indigo-800 py-4 transition-all duration-300 hover:translate-x-1"
@@ -172,7 +176,7 @@ const AdminDashboardPage = () => {
                   keyboard_arrow_right
                 </span>
               </a>
-            </div>
+            </div> */}
           </aside>
 
           {/* Main content area */}
@@ -184,7 +188,7 @@ const AdminDashboardPage = () => {
                   <strong>Admin</strong>
                 </h2>
                 <span className="inline-block mt-8 px-8 py-2 rounded-full text-xl font-bold text-white bg-indigo-800">
-                  01:51
+                  {currentTime}
                 </span>
               </div>
 
@@ -193,36 +197,36 @@ const AdminDashboardPage = () => {
                   Total Orders are <br />
                   <strong>{orderData.length}</strong>
                 </h2>
-                <a
+                {/* <a
                   href="#"
                   className="inline-block mt-8 px-8 py-2 rounded-full text-xl font-bold text-white bg-blue-800 hover:bg-blue-900 transition-transform duration-300 hover:scale-105"
                 >
                   See messages
-                </a>
+                </a> */}
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div
-                className="bg-white rounded-xl shadow-lg p-6 h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-slide-up"
+                className="bg-[#640D5F] rounded-xl shadow-lg p-6 h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-slide-up"
                 style={{ animationDelay: "0.1s" }}
               >
-                <h3 className="text-xl font-bold text-indigo-800">
+                <h3 className="text-xl font-bold text-white">
                   Total Food Requests:{" "}
-                  <span className="text-black font-bold">{foodReq.length}</span>
+                  <span className="text-white font-bold">{foodReq.length}</span>
                 </h3>
               </div>
               <div
-                className="bg-white rounded-xl shadow-lg p-6 h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-slide-up"
+                className="bg-[#836FFF] rounded-xl shadow-lg p-6 h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-slide-up"
                 style={{ animationDelay: "0.2s" }}
               >
-                <h3 className="text-xl font-bold text-indigo-800">
+                <h3 className="text-xl font-bold text-white">
                   Number of foods in our current Database:{" "}
                   <span className="font-extrabold">{foodData.length}</span>
                 </h3>
               </div>
               <div
-                className="bg-white rounded-xl shadow-lg p-6 h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-slide-up"
+                className="bg-[#FFFBF5] rounded-xl shadow-lg p-6 h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-slide-up"
                 style={{ animationDelay: "0.3s" }}
               >
                 <h3 className="text-xl font-bold text-indigo-800">
