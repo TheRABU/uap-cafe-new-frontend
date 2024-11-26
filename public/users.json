@@ -1,0 +1,42 @@
+[
+  {
+    "email": "swarup4284@gmail.com",
+    "name": "Swarup 46",
+    "role": "admin"
+  },
+  {
+    "email": "ami@gmail.com",
+    "name": "Muhtasim Rahman Swarup",
+    "role": "user"
+  },
+  {
+    "email": "wali@gmail.com",
+    "name": "frerewd",
+    "role": "seller"
+  },
+  {
+    "email": "21101019@uap-bd.edu",
+    "name": "dfsdfdsfdsf",
+    "role": "admin"
+  },
+  {
+    "email": "jacobjanvi@gmail.com",
+    "name": "Jacob Janvi",
+    "role": "seller"
+  },
+  {
+    "email": "fazlerabbi.xd@gmail.com",
+    "name": "Fazle Rabbi",
+    "role": "seller"
+  },
+  {
+    "email": "admin@gmail.com",
+    "name": "admin",
+    "role": "admin"
+  },
+  {
+    "email": "newuser@gmail.com",
+    "name": "New User",
+    "role": "user"
+  }
+]
