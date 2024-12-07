@@ -13,7 +13,7 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 const PurchaseNowPage = () => {
   const foodDetail = useLoaderData();
   const axiosPublic = useAxiosPublic();
-  const { image, name, price, Quantity } = foodDetail;
+  const { image, name, price, Quantity, email } = foodDetail;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [counter, setCounter] = useState(1);
@@ -32,19 +32,33 @@ const PurchaseNowPage = () => {
 
   const totalPrice = price * counter;
 
+  const timestamp = Date.now();
+
+  // Get the current date in 'YYYY-MM-DD' format
+  const currentDate = new Date(timestamp).toISOString().split("T")[0];
+
+  // Get the current time in 'HH:mm:ss' format
+  const currentTime = new Date(timestamp).toTimeString().split(" ")[0];
+
   const handelCreatePayment = async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = user.displayName;
-    const email = user.email;
+    const cusEmail = user.email;
     const date = form.date.value;
+    const time = form.time.value;
 
     axiosPublic
       .post("/create-payment", {
         amount: totalPrice,
         name: name,
-        email: email,
-        date: date,
+        email: cusEmail,
+        sellerEmail: email,
+        deliveryDate: date,
+        deliveryTime: time,
+        currentDate: currentDate,
+        currentTime: currentTime,
+        productId: foodDetail._id,
         productName: foodDetail.name,
         productImage: foodDetail.image,
         orderQuantity: counter,

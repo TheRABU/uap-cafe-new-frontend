@@ -54,6 +54,39 @@ const MyOrders = () => {
         console.log("Sorry, could not delete", error);
       });
   };
+
+  const handlePostReview = async (
+    orderId,
+    foodId,
+    sellerEmail,
+    reviewText,
+    rating
+  ) => {
+    try {
+      const response = await axios.post(`http://localhost:5000/review`, {
+        orderId,
+        foodId,
+        sellerEmail,
+        reviewText,
+        rating,
+        userEmail: user.email,
+      });
+
+      if (response.status === 201) {
+        Swal.fire("Success!", "Your review has been posted.", "success");
+      } else {
+        Swal.fire("Error", "Failed to post your review. Try again.", "error");
+      }
+    } catch (error) {
+      console.error("Error posting review:", error);
+      Swal.fire(
+        "Error",
+        "Something went wrong while posting the review.",
+        "error"
+      );
+    }
+  };
+
   if (loading) {
     return (
       <div className="h-screen flex gap-4 p-4 flex-wrap justify-center items-center">
@@ -65,6 +98,7 @@ const MyOrders = () => {
       </div>
     );
   }
+
   return (
     <div className="w-full px-5 h-full bg-[#ffffff]">
       <h2 className="text-center text-3xl "> My Ordered food items</h2>
@@ -74,8 +108,7 @@ const MyOrders = () => {
             key={order._id}
             orders={order}
             handleDeleteOrder={handleDeleteOrder}
-            setOrders={setOrders}
-            order={order}
+            handlePostReview={handlePostReview} // Pass the function
           />
         ))}
       </section>

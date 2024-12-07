@@ -9,15 +9,24 @@ const UserDropdown2 = () => {
   const { user, logOut } = useContext(AuthContext);
   const commonOptions = [{ name: "Dashboard", path: "/dashboard" }];
 
-  const userOptions = [{ name: "My ordered food item", path: "/my-orders" }];
+  const userOptions = [
+    { name: "My ordered food item", path: "/my-orders" },
+    { name: "My added reviews", path: "/myFoodReviews" },
+    { name: "My custom food request", path: "/my-requests" },
+    { name: "Add a custom food request", path: "/request" },
+  ];
 
   const sellerOptions = [
-    { name: "My added food items", path: "/my-products" },
-    { name: " Add a food item", path: "/request" },
+    { name: "My added food items", path: "/seller-view-foods" },
+    { name: " Add a food item", path: "/seller-add-item" },
     { name: "Orders", path: "/seller-orders" },
   ];
 
-  const adminOptions = [{ name: "Manage Users", path: "/manage-users" }];
+  const adminOptions = [
+    { name: "Manage Users", path: "/manage-users" },
+    { name: "All Order", path: "/all-order" },
+    { name: "All Food", path: "/all-food" },
+  ];
 
   // Determine the options based on the role
   let roleSpecificOptions = [];

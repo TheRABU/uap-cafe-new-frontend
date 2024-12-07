@@ -27,6 +27,12 @@ import ManageUsers from "../pages/manageUsers/ManageUsers";
 import AdminDashboardLayout from "../outlets/AdminDashboardLayout";
 import AdminDashboardPage from "../pages/admin/AdminDashboard/AdminDashboardPage";
 import ViewMySellerFoods from "../pages/seller/ViewSellerAddedFoods/ViewMySellerFoods";
+import SellerOrderManagement from "../pages/Seller-Order-Management/SellerOrderManagement";
+import AllOrder from "../pages/AllOrder/AllOrder";
+import AllFood from "../pages/AllFood/AllFood";
+import SellerReview from "../pages/SellerReview/SellerReview";
+import AllReview from "../pages/All Review/AllReview";
+import AboutUs from "../pages/aboutuspage/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -96,6 +102,10 @@ const router = createBrowserRouter([
           return res.data;
         },
       },
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
     ],
   },
   {
@@ -109,6 +119,26 @@ const router = createBrowserRouter([
       {
         path: "/manage-users",
         element: <ManageUsers />,
+      },
+      {
+        path: "/all-order",
+        element: <AllOrder />,
+      },
+      {
+        path: "/all-review",
+        element: <AllReview />,
+      },
+      {
+        path: "/all-food",
+        element: <AllFood />,
+      },
+      {
+        path: "/seller-orders",
+        element: <SellerOrderManagement />,
+      },
+      {
+        path: "/seller-reviews",
+        element: <SellerReview />,
       },
       {
         path: "/request",

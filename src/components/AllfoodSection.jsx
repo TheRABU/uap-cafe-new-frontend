@@ -2,30 +2,9 @@ import FoodCard from "./FoodCard";
 
 import useMenu from "../hooks/useMenu";
 
-/* eslint-disable react/no-unknown-property */
 const AllfoodSection = () => {
   const [menu, loading] = useMenu();
 
-  // const { foods, selectedCategory } = useContext(FoodContext);
-
-  // const filteredFoods =
-  //   selectedCategory === "All"
-  //     ? foods
-  //     : foods.filter((food) => food.category === selectedCategory);
-
-  // const [foods, setFoods] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get("dataset.json");
-  //       setFoods(response.data);
-  //     } catch (error) {
-  //       alert.error(error.message);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
   return (
     <>
       {loading ? (

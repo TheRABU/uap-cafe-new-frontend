@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
-import UserDropdown from "../../../components/UserDropdown";
+import UserDropdown2 from "../../../components/UserDropdown2";
 import { Link } from "react-router-dom";
 
 const AdminDashboardPage = () => {
@@ -115,7 +115,7 @@ const AdminDashboardPage = () => {
                 src="https://i.pinimg.com/564x/de/0f/3d/de0f3d06d2c6dbf29a888cf78e4c0323.jpg"
                 alt="Profile"
               /> */}
-              <UserDropdown />
+              <UserDropdown2 />
             </div>
           </div>
         </header>
